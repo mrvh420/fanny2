@@ -12,19 +12,6 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  // Disable PostCSS processing
-  webpack: (config) => {
-    config.module.rules.forEach((rule) => {
-      if (rule.oneOf) {
-        rule.oneOf.forEach((oneOfRule) => {
-          if (oneOfRule.sideEffects === false) {
-            oneOfRule.sideEffects = true;
-          }
-        });
-      }
-    });
-    return config;
-  },
 };
 
 export default nextConfig;
