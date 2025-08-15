@@ -13,10 +13,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <head>
-        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-      </head>
-      <body>{children}</body>
+      <body>
+        <script
+          src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+          async
+        />
+        {children}
+      </body>
     </html>
   );
 }

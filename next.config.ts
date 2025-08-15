@@ -1,9 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  experimental: {
-    appDir: true,
-  },
   // Disable pages directory scanning
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
   // Serve static files from public directory
