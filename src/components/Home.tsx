@@ -375,7 +375,7 @@ const Home: React.FC<HomeProps> = ({ projekte }) => {
               overflow: "hidden"
             });
 
-            const contentHeight = content.offsetHeight;
+            const contentHeight = (content as HTMLElement).offsetHeight;
 
             gsap.set(content, {
               maxHeight: 0,
@@ -478,7 +478,7 @@ const Home: React.FC<HomeProps> = ({ projekte }) => {
           gsap.set(content, {
             maxHeight: "none"
           });
-          const autoHeight = content.offsetHeight;
+          const autoHeight = (content as HTMLElement).offsetHeight;
 
           if (Math.abs(currentHeight - autoHeight) > 1) {
             gsap.set(content, {
