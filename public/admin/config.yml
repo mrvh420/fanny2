@@ -4,11 +4,8 @@ backend:
 
 local_backend: true
 
-# Enable local backend for development
-local_backend: true
-
-# Site URL for Netlify Identity
-site_url: https://fanny2-mrvh420s-projects.vercel.app
+# Site URL for Netlify deployment
+site_url: https://fanny2.netlify.app
 
 media_folder: "public/img"
 public_folder: "/img"
