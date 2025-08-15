@@ -1,0 +1,52 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "public/img"
+public_folder: "/img"
+
+collections:
+  - name: "projekte"
+    label: "Projekte"
+    folder: "content/projekte"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "projekt"}
+      - {label: "Titel", name: "title", widget: "string"}
+      - {label: "Bild", name: "image", widget: "image", default: "/img/Malerei/Malerei/"}
+      - {label: "Linke Texte", name: "left_texts", widget: "list", fields: [{label: "Text", name: "text", widget: "string"}]}
+      - {label: "Rechte Texte", name: "right_texts", widget: "list", fields: [{label: "Text", name: "text", widget: "string"}]}
+      - {label: "Jahr", name: "year", widget: "string", default: "2025"}
+      - {label: "Reihenfolge", name: "order", widget: "number", default: 1}
+
+  - name: "bilder"
+    label: "Bilder"
+    folder: "public/img/Malerei/Malerei"
+    create: true
+    fields:
+      - {label: "Bild", name: "image", widget: "image"}
+      - {label: "Titel", name: "title", widget: "string"}
+      - {label: "Beschreibung", name: "description", widget: "text", required: false}
+
+  - name: "seiten"
+    label: "Seiten"
+    folder: "content/pages"
+    create: true
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
+      - {label: "Titel", name: "title", widget: "string"}
+      - {label: "Inhalt", name: "body", widget: "markdown"}
+
+  - name: "blog"
+    label: "Blog"
+    folder: "content/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Titel", name: "title", widget: "string"}
+      - {label: "Datum", name: "date", widget: "datetime"}
+      - {label: "Inhalt", name: "body", widget: "markdown"} 

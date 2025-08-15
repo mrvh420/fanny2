@@ -13,7 +13,7 @@
 html,
 body {
   height: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 body {
@@ -40,20 +40,16 @@ body {
   flex: 1;
   justify-content: center;
   position: relative;
-  overflow-y: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.projects-list::-webkit-scrollbar {
-  display: none;
+  overflow: hidden;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .project-item {
   width: 100%;
   text-align: center;
   cursor: pointer;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
   position: relative;
 }
 
@@ -66,17 +62,16 @@ body {
 }
 
 .project-title {
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: -0.02em;
-  margin: 0.5rem 0;
-  color: #000000;
+  margin: 0.15rem 0;
 }
 
 .hover-indicator {
   position: absolute;
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   background-color: #000000;
   top: 50%;
   transform: translateY(-50%);
@@ -87,17 +82,18 @@ body {
 }
 
 .hover-indicator.left {
-  left: -20px;
+  left: -15px;
 }
 
 .hover-indicator.right {
-  right: -20px;
+  right: -15px;
 }
 
 .project-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 0.5rem;
   max-height: 0;
   opacity: 0;
   overflow: hidden;
@@ -107,17 +103,16 @@ body {
 }
 
 .project-details {
-  width: 25%;
+  width: 22%;
   text-align: left;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   letter-spacing: 0.05rem;
   font-weight: 500;
-  color: #000000;
 }
 
 .project-details .line-wrapper {
   overflow: hidden;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 
 .project-details.right {
@@ -125,26 +120,21 @@ body {
 }
 
 .detail-label {
-  margin-bottom: 0.25rem;
-  font-size: 0.7rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.5rem;
   letter-spacing: 0.05rem;
-  color: #000000;
 }
 
 .detail-year {
-  margin-top: 0.5rem;
-  color: #000000;
+  margin-top: 0.3rem;
 }
 
 .project-image {
-  width: 40%;
-  max-width: 400px;
+  width: 56%;
+  max-width: 300px;
   position: relative;
   overflow: hidden;
   aspect-ratio: 4/3;
-  background-color: #f5f5f5;
-  border: 1px solid #e0e0e0;
-  min-height: 200px; /* Ensure minimum height */
 }
 
 .image-wrapper {
@@ -152,10 +142,6 @@ body {
   overflow: hidden;
   height: 100%;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 200px; /* Ensure minimum height */
 }
 
 .image-wrapper img {
@@ -163,39 +149,9 @@ body {
   height: 100%;
   display: block;
   object-fit: cover;
-  background-color: #f5f5f5;
-  transition: opacity 0.3s ease;
-  min-height: 200px; /* Ensure minimum height */
-  opacity: 1 !important; /* Force visibility */
-}
-
-/* Specific adjustment for the first image (Lorem ipsum) */
-.project-item[data-index="0"] .image-wrapper img {
-  object-position: center 30%; /* Move crop position down to show more bottom part */
-}
-
-/* Ensure images are visible when project content is expanded */
-.project-content[style*="opacity: 1"] .image-wrapper img,
-.project-content[style*="autoAlpha: 1"] .image-wrapper img {
   opacity: 1 !important;
   visibility: visible !important;
-  display: block !important;
-}
-
-.image-wrapper img:not([src]), 
-.image-wrapper img[src=""],
-.image-wrapper img[src*="undefined"] {
-  display: none;
-}
-
-@media (max-height: 700px) {
-  .project-title {
-    font-size: 2.5rem;
-  }
-
-  .project-item {
-    margin-bottom: 0.75rem;
-  }
+  clip-path: inset(0% 0 0 0) !important;
 }
 
 @media (max-width: 768px) {
@@ -206,20 +162,20 @@ body {
   .project-details {
     width: 100%;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .project-details.right {
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     margin-bottom: 0;
   }
 
   .project-image {
-    width: 80%;
+    width: 60%;
   }
 
   .project-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 } 

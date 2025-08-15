@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fanny Portfolio
 
-## Getting Started
+Ein künstlerisches Portfolio mit Next.js und Netlify CMS.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- 🎨 Animierte Projektgalerie mit GSAP
+- 📱 Responsive Design
+- 🖼️ Bildverwaltung über Netlify CMS
+- ✏️ Textbearbeitung ohne Code
+- ⚡ Schnelle Performance
+
+## CMS Setup
+
+### Für Entwickler:
+
+1. **Lokale Entwicklung:**
+   ```bash
+   npm run dev
+   ```
+
+2. **Netlify CMS Admin:**
+   - Gehe zu: `http://localhost:3000/admin`
+   - Verwende lokalen Backend-Modus
+
+### Für Kunden:
+
+1. **Content bearbeiten:**
+   - Gehe zu: `https://deine-domain.com/admin`
+   - Melde dich mit deinen Zugangsdaten an
+
+2. **Was kann bearbeitet werden:**
+   - ✅ Projekt-Titel ändern
+   - ✅ Bilder hochladen/ändern
+   - ✅ Linke und rechte Texte bearbeiten
+   - ✅ Jahr anpassen
+   - ✅ Reihenfolge der Projekte ändern
+
+3. **Live Preview:**
+   - Änderungen werden automatisch nach dem Speichern sichtbar
+   - Keine Code-Kenntnisse erforderlich
+
+## Projektstruktur
+
+```
+├── content/
+│   ├── projekte/          # Projekt-Daten (CMS)
+│   ├── pages/            # Statische Seiten
+│   └── posts/            # Blog-Posts
+├── public/
+│   ├── admin/            # Netlify CMS Admin
+│   └── img/              # Bilder
+└── src/
+    ├── components/       # React-Komponenten
+    ├── lib/             # CMS-Hilfsfunktionen
+    └── app/             # Next.js App Router
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deployment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Vercel (Empfohlen):**
+   - Verbinde dein GitHub-Repository
+   - Automatische Deployments
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Netlify:**
+   - Git-basiertes Deployment
+   - Netlify CMS Integration
 
-## Learn More
+## Technologien
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Frontend:** Next.js 15, React 19, TypeScript
+- **Animationen:** GSAP
+- **CMS:** Netlify CMS
+- **Styling:** CSS Modules
+- **Deployment:** Vercel/Netlify
